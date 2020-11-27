@@ -11,6 +11,20 @@
         <input type="email" name="email" placeholder="Your Email" value="<%= profile_user.email %>" required>
 
         <input type="file" name="avatar" placeholder="Profile Picture">
+        
+        <input type="radio" id="male" name="gender" value="male" <%if(profile_user.gender=="male"){%>
+            <%="checked"%>
+            <%}%>>
+            <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female" <%if(profile_user.gender=="female"){%>
+            <%="checked"%>
+            <%}%>>
+            <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other" <%if(profile_user.gender=="other"){%>
+            <%="checked"%>
+            <%}%>>
+            <label for="other">Other</label>
+
         <input type="submit"  value="Update">
     </form>
     

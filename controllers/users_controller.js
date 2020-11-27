@@ -27,6 +27,7 @@ module.exports.update = async function(req, res){
                 
                 user.name = req.body.name;
                 user.email = req.body.email;
+                user.gender = req.body.gender;
 
                 if (req.file){
 
