@@ -23,15 +23,73 @@
         </section>
         
         
-        <section id="user-friends">
-            <h4>Friends</h4>
+        <section id="users">
+            <h4>Suggested Friends</h4>
             <% for(u of all_users){%>
                 <p>
                     <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
                 </p>
             <% } %>
         </section>
-
+        <!-- friends list -->
+        <% if(locals.user) { %>
+            <div class="friends-list">
+            <div class="header">Friends</div>
+                <% if(locals.user.friendships.length == 0) {%>
+                <div class="no-friends">No friends found!</div>
+                <% }else{ %> <% for(friends of locals.user.friendships){ %> 
+                    <!-- <p>inside friendslist</p>
+                    <p><%=locals.user.id%></p>
+                    <p><%=friends.from_user.id%></p> -->
+                    <%if(friends.from_user.id == locals.user.id) {%>
+                        <!-- <p>friends from_user=local.user</p> -->
+                        <div>
+                        <a class="friends-item" href="/users/profile?id=<%=friends.to_user._id%>">
+                            <div class="friends-img">
+                            <% if(friends.to_user.avatar == undefined){ %>
+                                <img
+                                class="rounded-circle" id="user-dp"
+                                src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
+                                alt="logo"
+                                />
+                            <% }else{%>
+                                <img
+                                class="rounded-circle" id="user-dp"
+                                src="<%= locals.user.avatar %>"
+                                alt="logo"
+                                />
+                            <% } %>
+                            </div>
+                            <div class="friends-name"><%= friends.to_user.name %></div>
+                        </a>
+                        </div>
+                    <%}%> 
+                    <% if(friends.to_user.id == locals.user.id) {%>
+                        <p>friends touser == local</p>
+                        <div>
+                            <a class="friends-item" href="/users/profile?id=<%=friends.from_user._id%>">
+                                <div class="friends-img">
+                                <% if(friends.from_user.avatar == undefined){ %>
+                                <img
+                                class="rounded-circle" id="user-dp"
+                                src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
+                                alt="logo"
+                                    />
+                                <% }else{%>
+                                    <img
+                                    class="rounded-circle" id="user-dp"
+                                    src="<%= locals.user.avatar %>"
+                                    alt="logo"
+                                    />
+                                <% } %>
+                                </div>
+                                <div class="friends-name"><%= friends.from_user.name %></div>
+                            </a>
+                        </div>
+                    <% } %> 
+                 <% } %> <% } %> 
+            </div>
+            <% } %>
     <%- include('_chat_box') -%>
 </div>
 

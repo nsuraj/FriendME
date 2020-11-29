@@ -24,6 +24,24 @@
             <%="checked"%>
             <%}%>>
             <label for="other">Other</label>
+            <!-- update password section -->
+            <div class="field">
+                <div class="field-label">New password</div>
+    
+                <input
+                  type="password"
+                  name='password'
+                />
+              </div>
+    
+              <div class="field">
+                <div class="field-label">Confirm password</div>
+    
+                <input
+                  type="password"
+                  name='confirm_password'
+                />
+              </div>
 
         <input type="submit"  value="Update">
     </form>
@@ -32,4 +50,48 @@
     <!-- else show only the profile info -->
     <p><%= profile_user.name %></p>
     <p><%= profile_user.email %></p>
+    <div class="settings">
+        <!-- <div class="img-container">
+          <img
+            src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
+            alt="user-dp"
+          />
+        </div> -->
+
+        <div class="field">
+          <div class="field-label">Email</div>
+          <div class="field-value"><%= profile_user.email %></div>
+        </div>
+
+        <div class="field">
+          <div class="field-label">Name</div>
+          <div class="field-value"><%= profile_user.name %></div>
+        </div>
+
+        <div class="btn-grp">
+          <% let isFriend = false %>
+          <% for(let friend of locals.populated_user.friendships){ %>
+           <!-- <p><%=profile_user.id%></p>
+           <p><%=friend.from_user%></p> -->
+            <% if(friend.to_user == profile_user.id || friend.from_user == profile_user.id){ %>
+              <p>friend</p>
+              <% isFriend = true %>
+            <% } %>
+          <% } %>
+          <% if(isFriend){%>
+            <button class="btn save-btn">
+              <a style="color:white;" class="toggle-friend-btn" href="/friends/add-friend/?id=<%= profile_user.id %>">
+                Remove Friend
+              </a>
+            </button>
+          <% }else{%>
+            <button class="btn save-btn">
+              <a style="color:white;" class="toggle-friend-btn" href="/friends/add-friend/?id=<%= profile_user.id %>">
+                Add Friend
+              </a>
+            </button>
+          <% } %>
+        </div>
 <%} %>
+
+<script src="/js/toggle_friend.js"></script>
