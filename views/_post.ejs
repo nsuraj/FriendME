@@ -1,13 +1,15 @@
+<link rel="stylesheet" href="/css/post.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <li id="post-<%= post._id %>">
     <p>
         <% if (locals.user && locals.user.id == post.user.id){ %>
         <small>
-            <a class="delete-post-button"  href="/posts/destroy/<%= post.id %>">X</a>
+            <a class="delete-post-button"  href="/posts/destroy/<%= post.id %>"><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
         </small>
         <% } %>
         <%= post.content %>
         <br>
-        <small>
+        <small id="user-post">
             <%= post.user.name %>
         </small>
 
@@ -17,10 +19,10 @@
         <small>
             <% if (locals.user){ %>
                 <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
-                        <%= post.likes.length %> Likes
+                    <i class="fa fa-gratipay" aria-hidden="true"></i> <%= post.likes.length %> Likes
                 </a>
             <% }else{ %>
-                <%= post.likes.length %> Likes
+                <i class="fa fa-gratipay" aria-hidden="true"></i><%= post.likes.length %> Likes
             <% } %>
         </small>
 
@@ -29,7 +31,7 @@
         <% if (locals.user){ %>
             <!-- let's give an id to the new comment form, we'll also need to make the same changes in home_posts.js where we're adding a post to the page -->
             <form id="post-<%= post._id %>-comments-form" action="/comments/create" method="POST">
-                <input type="text" name="content" placeholder="Type Here to add comment..." required>
+                <input type="text" name="content" placeholder="Comment this post..." required>
                 <input type="hidden" name="post" value="<%= post._id %>" >
                 <input type="submit" value="Add Comment">
             </form>

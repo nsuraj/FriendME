@@ -1,9 +1,10 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <li id="comment-<%= comment._id %>">
     <p>
         <% if (locals.user && locals.user.id == comment.user.id){ %>
         
         <small>
-            <a class="delete-comment-button" href="/comments/destroy/<%= comment.id %>">X</a>
+            <a class="delete-comment-button" href="/comments/destroy/<%= comment.id %>"><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
         </small>
         <% } %>
         <%= comment.content %>
@@ -16,10 +17,10 @@
         <small>
             <% if (locals.user){ %>
                 <a class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
-                        <%= comment.likes.length %> Likes
+                    <i class="fa fa-gratipay" aria-hidden="true"></i> <%= comment.likes.length %> Likes
                 </a>
             <% }else{ %>
-                <%= comment.likes.length %> Likes
+                <i class="fa fa-gratipay" aria-hidden="true"></i><%= comment.likes.length %> Likes
             <% } %>
         </small>
 

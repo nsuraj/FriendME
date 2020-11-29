@@ -1,17 +1,18 @@
-<link  rel="stylesheet"  href="/css/auth.css'>
+<link rel="stylesheet" href="/css/sign_in.css">
 
 <form method="POST" action='/auth/verify-email' class="login-form">
-
-  <span class="login-signup-header">Verify Account</span>
+<div class="sign-in">
+  <h1>Verify Account</h1>
   <!-- {/* <% if(false){ %>
   <div class="alert error-dailog">Error</div>
   <% } %>
    */} -->
-  <div class="field">
+  <div id = "email">
     <input type="email" name='email' placeholder="Email" required />
   </div>
 
   <div class="field">
     <button type="submit">Send Mail</button>
+  </div>
   </div>
 </form>

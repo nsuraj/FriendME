@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="/css/home.css">
 <link rel="stylesheet" href="/css/chat_box.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div id="home-container">
     <section id="feed-posts">
             <h4>Posts</h4>
             <% if(locals.user){ %>
             <form action="/posts/create" id="new-post-form" method="POST">
-                <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required></textarea>
+                <textarea name="content" cols="30" rows="3" placeholder="Wanna Write a Post..." required></textarea>
                 <input type="submit" value="Post">
             </form>
             <% } %>
@@ -21,20 +21,31 @@
                 </ul>
             </div>
         </section>
-        
-        
+        <div class="userlist">
+        <% if(locals.user) { %>
         <section id="users">
             <h4>Suggested Friends</h4>
             <% for(u of all_users){%>
+                <%if (u.id != locals.user.id){%>
                 <p>
                     <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
                 </p>
-            <% } %>
+            <% } %><% } %>
         </section>
+        <%}else{%>
+            <section id="users">
+                <h4>FriendME Guys!!</h4>
+                <% for(u of all_users){%>
+                    <p>
+                        <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+                    </p>
+                <% } %>
+            </section>
+            <%}%>
         <!-- friends list -->
         <% if(locals.user) { %>
-            <div class="friends-list">
-            <div class="header">Friends</div>
+            <div id="friends-list">
+            <div class="header"><h4>Friends</h4></div>
                 <% if(locals.user.friendships.length == 0) {%>
                 <div class="no-friends">No friends found!</div>
                 <% }else{ %> <% for(friends of locals.user.friendships){ %> 
@@ -44,7 +55,7 @@
                     <%if(friends.from_user.id == locals.user.id) {%>
                         <!-- <p>friends from_user=local.user</p> -->
                         <div>
-                        <a class="friends-item" href="/users/profile?id=<%=friends.to_user._id%>">
+                        <a class="friends-item" href="/users/profile/<%=friends.to_user.id%>">
                             <div class="friends-img">
                             <% if(friends.to_user.avatar == undefined){ %>
                                 <img
@@ -55,7 +66,7 @@
                             <% }else{%>
                                 <img
                                 class="rounded-circle" id="user-dp"
-                                src="<%= locals.user.avatar %>"
+                                src="<%= friends.to_user.avatar %>"
                                 alt="logo"
                                 />
                             <% } %>
@@ -65,9 +76,9 @@
                         </div>
                     <%}%> 
                     <% if(friends.to_user.id == locals.user.id) {%>
-                        <p>friends touser == local</p>
+                        
                         <div>
-                            <a class="friends-item" href="/users/profile?id=<%=friends.from_user._id%>">
+                            <a class="friends-item" href="/users/profile/<%=friends.from_user.id%>">
                                 <div class="friends-img">
                                 <% if(friends.from_user.avatar == undefined){ %>
                                 <img
@@ -78,7 +89,7 @@
                                 <% }else{%>
                                     <img
                                     class="rounded-circle" id="user-dp"
-                                    src="<%= locals.user.avatar %>"
+                                    src="<%= friends.from_user.avatar %>"
                                     alt="logo"
                                     />
                                 <% } %>
@@ -92,7 +103,7 @@
             <% } %>
     <%- include('_chat_box') -%>
 </div>
-
+</div>
 <!-- importing this script for creating the comments -->
 <script src="/js/home_post_comments.js" ></script>
 <script src="/js/home_posts.js"></script>
