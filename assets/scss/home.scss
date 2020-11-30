@@ -27,6 +27,7 @@
         border-left: 1px solid lightgrey;
         height: 50%;
         overflow: auto;
+        background-color: darkgray;
     }
     #friends-list{
         width: 100%;
@@ -34,12 +35,14 @@
         border-left: 1px solid lightgrey;
         height: 50%;
         overflow: auto;
+        background-color: rgb(250, 239, 194);
     }
     .userlist{
         img{
             height:30px;
             width:30px;
         }
+       
     }
 }
 #posts-list-container{
@@ -49,6 +52,10 @@
     li{
         color: rgb(138, 0, 252);
     }
+    ul {
+        background: rgb(226, 225, 225);
+        padding: 20px;
+      }
     #user-post{
         color: rgb(215, 182, 241);
     }

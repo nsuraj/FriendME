@@ -1,7 +1,10 @@
 <!--Create the code for chat box -->
 <% if (locals.user){ %>
+	<div id = "mydiv">
+		<div id="mydivheader">
 	<div id="user-chat-box">
-		<a href=""><h3>Chat:</h3></a>
+		<button class ="collapsible">Chat:</button>
+		<div class="content">
 		<ul id="chat-messages-list">
 			<li class="other-message">
 				<span>Other Message</span>
@@ -14,10 +17,13 @@
 			</li>
 
 		</ul>
+		
 		<div id="chat-message-input-container">
 			<input id="chat-message-input" placeholder="Type message here">
 			<button id="send-message">Send</button>
 		</div>
-
+</div>
+	</div>
+	</div>
 	</div>
 <% } %>

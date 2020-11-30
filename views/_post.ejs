@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/post.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<li id="post-<%= post._id %>">
+<li id="post-<%= post._id %>" class="post-list">
     <p>
         <% if (locals.user && locals.user.id == post.user.id){ %>
         <small>
@@ -28,6 +28,7 @@
 
     </p>
     <div class="post-comments">
+        <h3>Comments:<i class="fa fa-comments-o" aria-hidden="true"></i></h3>
         <% if (locals.user){ %>
             <!-- let's give an id to the new comment form, we'll also need to make the same changes in home_posts.js where we're adding a post to the page -->
             <form id="post-<%= post._id %>-comments-form" action="/comments/create" method="POST">
@@ -49,5 +50,5 @@
             </ul>
         </div>
     </div>
-    
+    <!-- <h3>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h3> -->
 </li>

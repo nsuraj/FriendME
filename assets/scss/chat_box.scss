@@ -1,21 +1,59 @@
 // add styling for the chat box
+#mydiv {
+	position: absolute;
+	z-index: 9;
+	text-align: center;
+	bottom: 10px;
+    right: 10px;
+	#mydivheader {
+		padding: 10px;
+		cursor: move;
+		z-index: 10;
 #user-chat-box{
-    position: fixed;
     bottom: 10px;
     right: 10px;
-    border: 1px dashed grey;
     height: 350px;
 	width: 300px;
-	background: white;
 	padding: 5px;
 	box-shadow: 1px 1px 1px 1px lightgrey;
-
+	.collapsible {
+		background-color: #777;
+		color: white;
+		cursor: pointer;
+		padding: 18px;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+		font-size: 15px;
+	  }
+	  .active, .collapsible:hover {
+		background-color: #555;
+	  }
+	  .collapsible:after {
+		content: '\002B';
+		color: white;
+		font-weight: bold;
+		float: right;
+		margin-left: 5px;
+	  }
+	  .active:after {
+		content: "\2212";
+	  }
+	  .content {
+		padding: 0 15px;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.2s ease-out;
+		
+	  }	  
     #chat-messages-list{
     	list-style: none;
-	    padding: 10px;
+	    padding: 5px;
 	    height: 70%;
 	    background-color: white;
-	    overflow: auto;
+		overflow: auto;
+		margin: 0px;
 
 	    .other-message{
 		    text-align: left;
@@ -43,7 +81,7 @@
 
     }
     #chat-message-input-container{
-    	    height: 24%;
+    	    height: 19%;
 		    width: 100%;
 		    display: flex;
 		    flex-direction: row;
@@ -62,4 +100,6 @@
 			    background: #58d258;
 		    }
 	    }
+}
+	}
 }

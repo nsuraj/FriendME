@@ -8,10 +8,18 @@
         box-shadow: 1px 1px 1px 1px lightgrey;
 
         .mini-logo{
+            .logo-image{
+                display: inline-block;
+                img{
+                    height: 40px;
+                    width: 40px;
+                }
+            }
             p{
                 margin: 5px;
                 font-size: 1.4rem;
                 font-weight: bold;
+                display: inline;
             }
         }
 

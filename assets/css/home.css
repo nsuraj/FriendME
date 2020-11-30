@@ -22,13 +22,15 @@
     padding: 10px;
     border-left: 1px solid lightgrey;
     height: 50%;
-    overflow: auto; }
+    overflow: auto;
+    background-color: darkgray; }
   #home-container #friends-list {
     width: 100%;
     padding: 10px;
     border-left: 1px solid lightgrey;
     height: 50%;
-    overflow: auto; }
+    overflow: auto;
+    background-color: #faefc2; }
   #home-container .userlist img {
     height: 30px;
     width: 30px; }
@@ -38,6 +40,10 @@
 
 #posts-list-container li {
   color: #8a00fc; }
+
+#posts-list-container ul {
+  background: #e2e1e1;
+  padding: 20px; }
 
 #posts-list-container #user-post {
   color: #d7b6f1; }

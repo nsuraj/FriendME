@@ -15,3 +15,13 @@
 
 #posts-list-container .delete-comment-button {
   color: red; }
+
+#posts-list-container h3 {
+  color: black; }
+
+#posts-list-container li {
+  background: #9fb4da;
+  margin: 5px; }
+
+#posts-list-container .post-list {
+  border-bottom: 1px solid chocolate; }
