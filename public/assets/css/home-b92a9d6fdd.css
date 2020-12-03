@@ -1,0 +1,58 @@
+#home-container {
+  display: flex; }
+  #home-container #feed-posts {
+    width: 70%;
+    padding: 10px;
+    border-bottom: 1px solid lightgrey; }
+    #home-container #feed-posts textarea {
+      width: 50%;
+      height: 30px;
+      border-radius: 6px;
+      border: 1px solid; }
+    #home-container #feed-posts input[type=submit] {
+      background-color: #1877f2;
+      color: whitesmoke;
+      border: none;
+      border-radius: 6px;
+      height: 30px; }
+  #home-container .userlist {
+    width: 30%; }
+  #home-container #users {
+    width: 100%;
+    padding: 10px;
+    border-left: 1px solid lightgrey;
+    height: 50%;
+    overflow: auto;
+    background-color: darkgray; }
+  #home-container #friends-list {
+    width: 100%;
+    padding: 10px;
+    border-left: 1px solid lightgrey;
+    height: 50%;
+    overflow: auto;
+    background-color: #faefc2; }
+  #home-container .userlist img {
+    height: 30px;
+    width: 30px; }
+
+#posts-list-container a {
+  text-decoration: none; }
+
+#posts-list-container li {
+  color: #8a00fc; }
+
+#posts-list-container ul {
+  background: #e2e1e1;
+  padding: 20px; }
+
+#posts-list-container #user-post {
+  color: #d7b6f1; }
+
+#posts-list-container small {
+  color: red; }
+
+#posts-list-container .toggle-like-button {
+  color: #ff006a; }
+
+#posts-list-container small {
+  color: red; }

@@ -1,0 +1,18 @@
+.sign-in {
+  text-align: center; }
+  .sign-in h1 {
+    color: #f86903; }
+  .sign-in #email {
+    height: 50px;
+    width: 100%; }
+    .sign-in #email input {
+      border: lightgrey solid 1px;
+      border-radius: 6px;
+      height: 30px;
+      width: 30%; }
+  .sign-in input[type=submit], .sign-in button[type=submit] {
+    background-color: #1877f2;
+    color: whitesmoke;
+    border: none;
+    border-radius: 6px;
+    height: 30px; }

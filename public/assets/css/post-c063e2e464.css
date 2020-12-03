@@ -1,0 +1,27 @@
+#posts-list-container a {
+  text-decoration: none; }
+
+#posts-list-container li {
+  color: #8a00fc; }
+
+#posts-list-container #user-post {
+  color: #d7b6f1; }
+
+#posts-list-container .delete-post-button {
+  color: red; }
+
+#posts-list-container .toggle-like-button {
+  color: #ff006a; }
+
+#posts-list-container .delete-comment-button {
+  color: red; }
+
+#posts-list-container h3 {
+  color: black; }
+
+#posts-list-container li {
+  background: #9fb4da;
+  margin: 5px; }
+
+#posts-list-container .post-list {
+  border-bottom: 1px solid chocolate; }

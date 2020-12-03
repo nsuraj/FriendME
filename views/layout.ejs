@@ -5,15 +5,15 @@
            
             <%= title  %>
         </title>
-        <link rel="icon" href="/images/favicon.ico" type="image/x-icon"> 
+        <link rel="icon" href="<%= assetPath('images/favicon.ico') %>" type="image/x-icon"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-        <link rel="stylesheet" href="/css/layout.css">
-        <link rel="stylesheet" href="/css/header.css">
-        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="<%= assetPath('css/layout.css') %>">
+        <link rel="stylesheet" href="<%= assetPath('css/header.css')%>">
+        <link rel="stylesheet" href="<%= assetPath('css/footer.css') %>">
 
         <%- style %>
         
